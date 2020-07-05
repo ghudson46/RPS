@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <title>Rock, Paper, Scissors</title>
+    <meta charset="UTF-8">
+    <style>
+      .background-img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://d2skuhm0vrry40.cloudfront.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/thumbnail/750x422/format/jpg/quality/60" alt="rock paper scissors pic" class="background-img">
+    <script type="text/javascript">
+    
+    // choices the computer can select
+    var compChoices = ['rock', 'paper', 'scissors'];
+
+    // our loop that runs the game 1 time 
+    for (var i = 0; i < 1; i++) {
+      // the computers guess. created by generating a random number, rounding it down, multiplying that by the number of elements in the array, and using that number to select which element from the array the computer chooses
+      var compGuess = compChoices[Math.floor(Math.random() * compChoices.length)];
+
+      // prompts the user to enter rock paper or scissors. converts all text to lower case to avoid misinterpretations
+      var userGuess = prompt("Choose rock, paper, or scissors");
+      userGuess = userGuess.toLowerCase();
+    
+      // if user enters a valid input, the computer reveals its guess
+    if (userGuess === 'rock' || userGuess === 'paper' || userGuess === 'scissors') {
+      alert('the computer chose ' + compGuess);
+    } else {
+      alert('invalid response. choose either, rock, paper, or scissors');
+    }
+    
+    
+      // if else statement that decides who wins or loses based on the selection of the user and the computer
+    if (userGuess === 'scissors' && compGuess === 'paper') {
+      alert('YOU WON! Refresh browser to play again!');
+    } else if (userGuess === 'rock' && compGuess === 'scissors') {
+      alert('YOU WON! Refresh browser to play again!');
+    } else if (userGuess === 'paper' && compGuess === 'rock') {
+      alert('YOU WON! Refresh browser to play again!');
+    } else if (userGuess === compGuess) {
+      alert('You tied... Refresh the browser to try again.');
+    } else {
+      alert('You lost. Refresh the browser to earn redemption');
+    }
+   }
+    </script>
+</body>
